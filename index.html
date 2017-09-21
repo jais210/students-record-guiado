@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Student Record</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">Student Record</h1>
+    </header>
+    <section class="botones">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+                <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="agregando">Add Student</button>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+                <button class="btn btn-primary btn-block" id="mostrar">Print All</button>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+                <button class="btn btn-primary btn-block" id="eliminadas">Update Dropout</button>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 text-center">
+                <button class="btn btn-primary btn-block" id="empleables">Run Employability</button>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="container">
+        <div id="fichas"></div>
+    </section>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">Add Student</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre" class="active"> Ingrese el nombre de la estudiante</label>
+                            <input id="nombre" type="text" class="form-control">
+                            <p class="text-danger invisible">*Ingrese un nombre</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="puntosTecnicos" class="active"> Ingrese sus puntos tecnicos (0-100)</label>
+                            <div class="range">
+                                <input type="range" id="puntosTecnicos" min="0" max="100" value="50">
+                                <output class="text-center" id="range">50</output>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="puntosHSE"> Ingrese los puntos HSE(Habilidades Socio-emocionales) (0-100)</label>
+                            <div class="range">
+                                <input type="range" id="puntosHSE" min="0" max="100" value="50">
+                                <output class="text-center" id="range2">50</output>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" id="agregar">Add Student</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $('#puntosTecnicos').on('change', function() {
+            $('#range').html($(this).val());
+        });
+        $('#puntosHSE').on('change', function() {
+            $('#range2').html($(this).val());
+        });
+    </script>
+    <scrip src="main.js"></scrip>
+</body>
+
+</html>
